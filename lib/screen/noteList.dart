@@ -23,9 +23,7 @@ class NoteListState extends State<NoteList> {
       ),
       body: getNoteListView(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return NoteDetail();
-        })),
+        onPressed: () => navigateToDetail('Create Note'),
         tooltip: 'Add Note',
         child: Icon(Icons.add),
       ),
@@ -57,8 +55,14 @@ class NoteListState extends State<NoteList> {
         subtitle: Text('dummy date'),
         trailing: Icon(Icons.delete, color: Colors.grey,),
 
-        onTap: () => debugPrint('ListTile Tapped'),
+        onTap: () => navigateToDetail('Edit Note'),
       ),
     );
+  }
+  //navigate to detail page function
+  void navigateToDetail(String title) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return NoteDetail(title);
+    }));
   }
 }
