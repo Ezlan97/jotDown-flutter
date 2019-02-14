@@ -1,6 +1,6 @@
 # jot_down
 
-A new Flutter project.
+Simple taking note app.
 
 ## Getting Started
 
